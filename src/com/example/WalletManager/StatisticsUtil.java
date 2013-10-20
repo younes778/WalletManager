@@ -9,20 +9,20 @@ public class StatisticsUtil {
 	public static float moyenneDepensesJournalieresMois(String month, String year){
 		float nbJours;
 
-		if ( (month.equalsIgnoreCase(Date.Mois.FEVRIER.toString())) 
+		if ( (month.equalsIgnoreCase(""+Date.Mois.FEVRIER.ordinal())) 
 				&& (Integer.parseInt(year) % 4 != 0) ) nbJours = 28;
 		
-		else if ( (month.equalsIgnoreCase(Date.Mois.FEVRIER.toString())) 
+		else if ( (month.equalsIgnoreCase(""+Date.Mois.FEVRIER.ordinal())) 
 				     && (Integer.parseInt(year) % 4 == 0) ) nbJours = 29;
 		
 		
-		else if ((month.equalsIgnoreCase(Date.Mois.JANVIER.toString())) 
-				|| (month.equalsIgnoreCase(Date.Mois.MARS.toString())) 
-				  || (month.equalsIgnoreCase(Date.Mois.MAI.toString())) 
-				    || (month.equalsIgnoreCase(Date.Mois.JUILLET.toString())) 
-				      || (month.equalsIgnoreCase(Date.Mois.AOUT.toString())) 
-				        || (month.equalsIgnoreCase(Date.Mois.OCTOBRE.toString())) 
-				          || (month.equalsIgnoreCase(Date.Mois.DECEMBRE.toString()))) nbJours = 31;
+		else if ((month.equalsIgnoreCase(""+Date.Mois.JANVIER.ordinal())) 
+				|| (month.equalsIgnoreCase(""+Date.Mois.MARS.ordinal())) 
+				  || (month.equalsIgnoreCase(""+Date.Mois.MAI.ordinal())) 
+				    || (month.equalsIgnoreCase(""+Date.Mois.JUILLET.ordinal())) 
+				      || (month.equalsIgnoreCase(""+Date.Mois.AOUT.ordinal())) 
+				        || (month.equalsIgnoreCase(""+Date.Mois.OCTOBRE.ordinal())) 
+				          || (month.equalsIgnoreCase(""+Date.Mois.DECEMBRE.ordinal()))) nbJours = 31;
 		else nbJours = 30;
 		
 		DepensesDAO db = new DepensesDAO(null);
